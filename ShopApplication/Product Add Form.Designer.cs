@@ -293,6 +293,7 @@
             this.bt_save.TabIndex = 0;
             this.bt_save.Text = "حفظ";
             this.bt_save.UseVisualStyleBackColor = false;
+            this.bt_save.Click += new System.EventHandler(this.bt_save_Click);
             // 
             // Product_Add_Form
             // 

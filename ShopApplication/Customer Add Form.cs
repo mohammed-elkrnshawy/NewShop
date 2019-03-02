@@ -146,8 +146,8 @@ namespace ShopApplication
 
         private void Customer_Add_Form_Load(object sender, EventArgs e)
         {
-            RefForm();
-            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //RefForm();
+            //dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }

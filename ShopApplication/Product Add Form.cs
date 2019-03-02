@@ -16,5 +16,10 @@ namespace ShopApplication
         {
             InitializeComponent();
         }
+
+        private void bt_save_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
