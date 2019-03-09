@@ -44,8 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.txt_quantity = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_Price = new System.Windows.Forms.TextBox();
@@ -97,6 +95,7 @@
             this.comboProduct.Name = "comboProduct";
             this.comboProduct.Size = new System.Drawing.Size(203, 21);
             this.comboProduct.TabIndex = 12;
+            this.comboProduct.SelectedIndexChanged += new System.EventHandler(this.comboProduct_SelectedIndexChanged);
             // 
             // الكمية
             // 
@@ -174,6 +173,7 @@
             this.combo_name.Name = "combo_name";
             this.combo_name.Size = new System.Drawing.Size(174, 21);
             this.combo_name.TabIndex = 15;
+            this.combo_name.SelectedIndexChanged += new System.EventHandler(this.combo_name_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -229,8 +229,6 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.richTextBox1);
-            this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.txt_quantity);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.txt_Price);
@@ -254,25 +252,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(-1, 41);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.richTextBox1.Size = new System.Drawing.Size(239, 57);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "لا يوجد ملاحظات";
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(244, 41);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 28);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "البيان";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txt_quantity
             // 
@@ -281,6 +261,7 @@
             this.txt_quantity.Size = new System.Drawing.Size(106, 20);
             this.txt_quantity.TabIndex = 16;
             this.txt_quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_quantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_quantity_KeyPress);
             // 
             // label5
             // 
@@ -438,6 +419,7 @@
             this.btuSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btuSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btuSave.UseVisualStyleBackColor = false;
+            this.btuSave.Click += new System.EventHandler(this.btuSave_Click);
             // 
             // txt_afterPayment
             // 
@@ -467,6 +449,8 @@
             this.txt_payment.TabIndex = 28;
             this.txt_payment.Text = "0";
             this.txt_payment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_payment.TextChanged += new System.EventHandler(this.txt_payment_TextChanged);
+            this.txt_payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_payment_KeyPress);
             // 
             // label13
             // 
@@ -546,6 +530,8 @@
             this.txt_discount.TabIndex = 20;
             this.txt_discount.Text = "0";
             this.txt_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_discount.TextChanged += new System.EventHandler(this.txt_discount_TextChanged);
+            this.txt_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_discount_KeyPress);
             // 
             // label11
             // 
@@ -596,12 +582,10 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1386, 680);
@@ -628,6 +612,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Supplier_Purchasing_Form";
             this.Text = "Supplier_Purchasing_Form";
+            this.Load += new System.EventHandler(this.Supplier_Purchasing_Form_Load);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -663,8 +648,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_quantity;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_Price;
