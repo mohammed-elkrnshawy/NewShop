@@ -187,6 +187,7 @@ namespace ShopApplication
         private void txt_payment_TextChanged(object sender, EventArgs e)
         {
             SharedClass.Change(txt_payment);
+            Calcolate();
         }
 
         private void txt_payment_KeyPress(object sender, KeyPressEventArgs e)
@@ -214,6 +215,82 @@ namespace ShopApplication
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void EditSuplierAccount()
+        {
+            Ezzat.ExecutedNoneQuery("Supplier_updateTotalMoney", new SqlParameter("@Supplier_ID",combo_name.SelectedValue), new SqlParameter("@Total_Money", double.Parse(txt_afterPayment.Text)));
+        }
+
+        private void AddPurchasingBill()
+        {
+            Ezzat.ExecutedNoneQuery("Supplier_insertPurchasingBill"
+                        , new SqlParameter("@Purchasing_ID", int.Parse(txt_billNumber.Text))
+                        , new SqlParameter("@Supplier_ID", (int)combo_name.SelectedValue)
+                        , new SqlParameter("@Bill_Date", DateTime.Parse(DateTime.Now.ToString()))
+                        , new SqlParameter("@Material_Money", double.Parse(txt_totalMaterial.Text))
+                        , new SqlParameter("@Discount_Money", double.Parse(txt_discount.Text))
+                        , new SqlParameter("@After_Discount", double.Parse(txt_afterDiscount.Text))
+                        , new SqlParameter("@Total_oldMoney", double.Parse(txt_oldTotal.Text))
+                        , new SqlParameter("@Total_Money", double.Parse(txt_total.Text))
+                        , new SqlParameter("@Payment_Money", double.Parse(txt_payment.Text))
+                        , new SqlParameter("@After_Payment", double.Parse(txt_afterPayment.Text))
+                        , new SqlParameter("@Bill_Number_Supplier", int.Parse(txt_billNumberSupplier.Text))
+                );
+        }
+
+        private void AddIMBill_Details()
+        {
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                Ezzat.ExecutedNoneQuery("Supplier_insertIMBillDetails"
+                    , new SqlParameter("@Bill_ID", txt_billNumber.Text)
+                    , new SqlParameter("@Material_ID", int.Parse(item.Cells[0].Value.ToString()))
+                    , new SqlParameter("@Material_Name", item.Cells[1].Value.ToString())
+                    , new SqlParameter("@Material_PricePerUnit", item.Cells[2].Value.ToString())
+                    , new SqlParameter("@Material_Quantity", float.Parse(item.Cells[3].Value + ""))
+                    , new SqlParameter("@Unit", item.Cells[4].Value.ToString())
+                    , new SqlParameter("@Total", float.Parse(item.Cells[5].Value + ""))
+                    , new SqlParameter("@Bill_Type", true)
+                    , new SqlParameter("@Bill_Date", DateTime.Parse(DateTime.Now.ToString()))
+                    );
+            }
+        }
+
+        private void EditSafe()
+        {
+            // تعديل المبلغ الموجود ف الخزنة
+            Ezzat.ExecutedNoneQuery("Safe_updateDecrease", new SqlParameter("@Money_Quantity", float.Parse(txt_payment.Text)));
+
+            // عمل بيان صرف من الخزنة للعميل
+            Ezzat.ExecutedNoneQuery("Safe_insertTransaction",
+                new SqlParameter("@Report_Type", false),
+                new SqlParameter("@Bill_ID", int.Parse(txt_billNumber.Text)),
+                new SqlParameter("@Bill_Type", "صرف الى مورد"),
+                new SqlParameter("@Report_Date", DateTime.Parse(DateTime.Now.ToString())),
+                new SqlParameter("@Report_Money", float.Parse(txt_payment.Text))
+                );
+        }
+
+        private void EditStore()
+        {
+
+            // تعديل الكميات ف المخازن
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                Ezzat.ExecutedNoneQuery("Product_updateQuantity_Increase"
+                    , new SqlParameter("@Material_ID", int.Parse(item.Cells[0].Value.ToString()))
+                    , new SqlParameter("@Material_Quantity", item.Cells[3].Value.ToString())
+                    );
+            }
+
+            // اضافة تعاملات ف المخازن
+            Ezzat.ExecutedNoneQuery("StoreTransaction_insert",
+                new SqlParameter("@Report_Type", true),
+                new SqlParameter("@Report_Date", DateTime.Parse(DateTime.Now.ToString())),
+                new SqlParameter("@Bill_ID", int.Parse(txt_billNumber.Text)),
+                new SqlParameter("@Bill_Type", "شراء من مورد")
+                );
         }
     }
 }
