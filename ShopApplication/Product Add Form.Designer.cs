@@ -78,6 +78,7 @@
             this.txtQuantity.Size = new System.Drawing.Size(196, 20);
             this.txtQuantity.TabIndex = 18;
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // label6
             // 
@@ -96,6 +97,7 @@
             this.txt_SPrice.Size = new System.Drawing.Size(196, 20);
             this.txt_SPrice.TabIndex = 14;
             this.txt_SPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_SPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SPrice_KeyPress);
             // 
             // txt_Price
             // 
@@ -104,6 +106,7 @@
             this.txt_Price.Size = new System.Drawing.Size(196, 20);
             this.txt_Price.TabIndex = 13;
             this.txt_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Price_KeyPress);
             // 
             // txt_Name
             // 
@@ -174,6 +177,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(647, 470);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel5
             // 
@@ -197,6 +201,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(404, 20);
             this.textBox6.TabIndex = 20;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // panel6
             // 
@@ -267,6 +272,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "الغاء";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // bt_edit
             // 
@@ -280,6 +286,7 @@
             this.bt_edit.TabIndex = 1;
             this.bt_edit.Text = "تعديل";
             this.bt_edit.UseVisualStyleBackColor = false;
+            this.bt_edit.Click += new System.EventHandler(this.bt_edit_Click);
             // 
             // bt_save
             // 
@@ -305,6 +312,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Product_Add_Form";
             this.Text = "Product_Add_Form";
+            this.Load += new System.EventHandler(this.Product_Add_Form_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
