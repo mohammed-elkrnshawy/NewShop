@@ -119,6 +119,7 @@
             this.combo_name.Name = "combo_name";
             this.combo_name.Size = new System.Drawing.Size(174, 21);
             this.combo_name.TabIndex = 24;
+            this.combo_name.SelectedIndexChanged += new System.EventHandler(this.combo_name_SelectedIndexChanged);
             // 
             // txt_billNumber
             // 
@@ -188,6 +189,8 @@
             this.txt_Payment.TabIndex = 18;
             this.txt_Payment.Text = "0.00";
             this.txt_Payment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Payment.TextChanged += new System.EventHandler(this.txt_Payment_TextChanged);
+            this.txt_Payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Payment_KeyPress);
             // 
             // label4
             // 
@@ -261,6 +264,7 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btuSave
             // 
@@ -278,6 +282,7 @@
             this.btuSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btuSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btuSave.UseVisualStyleBackColor = false;
+            this.btuSave.Click += new System.EventHandler(this.btuSave_Click);
             // 
             // panel5
             // 
@@ -307,6 +312,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Customer_Payback_Form";
             this.Text = "Customer_Payback_Form";
+            this.Load += new System.EventHandler(this.Customer_Payback_Form_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
