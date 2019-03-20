@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.combo_Supliers = new System.Windows.Forms.ComboBox();
+            this.combo_name = new System.Windows.Forms.ComboBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAfter = new System.Windows.Forms.TextBox();
+            this.txtImport = new System.Windows.Forms.TextBox();
+            this.txtExport = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,15 +53,15 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // combo_Supliers
+            // combo_name
             // 
-            this.combo_Supliers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.combo_Supliers.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.combo_Supliers.FormattingEnabled = true;
-            this.combo_Supliers.Location = new System.Drawing.Point(204, 17);
-            this.combo_Supliers.Name = "combo_Supliers";
-            this.combo_Supliers.Size = new System.Drawing.Size(189, 21);
-            this.combo_Supliers.TabIndex = 30;
+            this.combo_name.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.combo_name.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo_name.FormattingEnabled = true;
+            this.combo_name.Location = new System.Drawing.Point(204, 17);
+            this.combo_name.Name = "combo_name";
+            this.combo_name.Size = new System.Drawing.Size(189, 21);
+            this.combo_name.TabIndex = 30;
             // 
             // dateTimePicker2
             // 
@@ -87,32 +87,32 @@
             this.label2.Text = "من تاريخ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // txtAfter
             // 
-            this.textBox3.Location = new System.Drawing.Point(477, 111);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(201, 20);
-            this.textBox3.TabIndex = 38;
-            this.textBox3.Text = "0";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAfter.Location = new System.Drawing.Point(477, 111);
+            this.txtAfter.Name = "txtAfter";
+            this.txtAfter.Size = new System.Drawing.Size(201, 20);
+            this.txtAfter.TabIndex = 38;
+            this.txtAfter.Text = "0";
+            this.txtAfter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // txtImport
             // 
-            this.textBox2.Location = new System.Drawing.Point(477, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(201, 20);
-            this.textBox2.TabIndex = 37;
-            this.textBox2.Text = "0";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtImport.Location = new System.Drawing.Point(477, 65);
+            this.txtImport.Name = "txtImport";
+            this.txtImport.Size = new System.Drawing.Size(201, 20);
+            this.txtImport.TabIndex = 37;
+            this.txtImport.Text = "0";
+            this.txtImport.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // txtExport
             // 
-            this.textBox1.Location = new System.Drawing.Point(477, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 20);
-            this.textBox1.TabIndex = 36;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtExport.Location = new System.Drawing.Point(477, 22);
+            this.txtExport.Name = "txtExport";
+            this.txtExport.Size = new System.Drawing.Size(201, 20);
+            this.txtExport.TabIndex = 36;
+            this.txtExport.Text = "0";
+            this.txtExport.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -135,6 +135,7 @@
             this.button1.Size = new System.Drawing.Size(41, 31);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -207,9 +208,9 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtAfter);
+            this.panel3.Controls.Add(this.txtImport);
+            this.panel3.Controls.Add(this.txtExport);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
@@ -237,7 +238,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.combo_Supliers);
+            this.panel2.Controls.Add(this.combo_name);
             this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label1);
@@ -257,6 +258,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Supplier_Transaction_Form";
             this.Text = "Supplier_Transaction_Form";
+            this.Load += new System.EventHandler(this.Supplier_Transaction_Form_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -269,13 +271,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox combo_Supliers;
+        private System.Windows.Forms.ComboBox combo_name;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAfter;
+        private System.Windows.Forms.TextBox txtImport;
+        private System.Windows.Forms.TextBox txtExport;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;

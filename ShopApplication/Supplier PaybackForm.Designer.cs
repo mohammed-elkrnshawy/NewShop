@@ -47,7 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txt_Payment = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_OldMoney = new System.Windows.Forms.TextBox();
+            this.txt_oldTotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -91,6 +91,7 @@
             this.combo_name.Name = "combo_name";
             this.combo_name.Size = new System.Drawing.Size(174, 21);
             this.combo_name.TabIndex = 23;
+            this.combo_name.SelectedIndexChanged += new System.EventHandler(this.combo_name_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -174,6 +175,7 @@
             this.btuSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btuSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btuSave.UseVisualStyleBackColor = false;
+            this.btuSave.Click += new System.EventHandler(this.btuSave_Click);
             // 
             // panel6
             // 
@@ -212,7 +214,7 @@
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.txt_Payment);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.txt_OldMoney);
+            this.panel5.Controls.Add(this.txt_oldTotal);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(0, 105);
             this.panel5.Name = "panel5";
@@ -266,6 +268,8 @@
             this.txt_Payment.TabIndex = 18;
             this.txt_Payment.Text = "0.00";
             this.txt_Payment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Payment.TextChanged += new System.EventHandler(this.txt_Payment_TextChanged);
+            this.txt_Payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Payment_KeyPress);
             // 
             // label4
             // 
@@ -277,15 +281,15 @@
             this.label4.Text = "المبلغ المدفوع";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_OldMoney
+            // txt_oldTotal
             // 
-            this.txt_OldMoney.Enabled = false;
-            this.txt_OldMoney.Location = new System.Drawing.Point(548, 38);
-            this.txt_OldMoney.Name = "txt_OldMoney";
-            this.txt_OldMoney.ReadOnly = true;
-            this.txt_OldMoney.Size = new System.Drawing.Size(174, 20);
-            this.txt_OldMoney.TabIndex = 16;
-            this.txt_OldMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_oldTotal.Enabled = false;
+            this.txt_oldTotal.Location = new System.Drawing.Point(548, 38);
+            this.txt_oldTotal.Name = "txt_oldTotal";
+            this.txt_oldTotal.ReadOnly = true;
+            this.txt_oldTotal.Size = new System.Drawing.Size(174, 20);
+            this.txt_oldTotal.TabIndex = 16;
+            this.txt_oldTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -307,6 +311,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Supplier_PaybackForm";
             this.Text = "Supplier_PaybackForm";
+            this.Load += new System.EventHandler(this.Supplier_PaybackForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -339,7 +344,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_Payment;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_OldMoney;
+        private System.Windows.Forms.TextBox txt_oldTotal;
         private System.Windows.Forms.Label label3;
     }
 }
