@@ -164,6 +164,7 @@
             this.btuSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btuSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btuSave.UseVisualStyleBackColor = false;
+            this.btuSave.Click += new System.EventHandler(this.btuSave_Click);
             // 
             // panel5
             // 
@@ -215,6 +216,7 @@
             this.textBox4.Size = new System.Drawing.Size(174, 20);
             this.textBox4.TabIndex = 26;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // label4
             // 
@@ -257,6 +259,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Outlay_Payment";
             this.Text = "Form_Outlay_Payment";
+            this.Load += new System.EventHandler(this.Form_Outlay_Payment_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
