@@ -47,7 +47,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txt_Discount = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_MaterialTotal = new System.Windows.Forms.TextBox();
+            this.txt_TotalMaterial = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -59,7 +59,6 @@
             this.الكمية = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.combo_car = new System.Windows.Forms.ComboBox();
@@ -96,6 +95,7 @@
             this.comboProduct.Name = "comboProduct";
             this.comboProduct.Size = new System.Drawing.Size(203, 21);
             this.comboProduct.TabIndex = 12;
+            this.comboProduct.SelectedIndexChanged += new System.EventHandler(this.comboProduct_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -105,7 +105,7 @@
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(8, 8);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1386, 680);
             this.panel1.TabIndex = 3;
@@ -143,7 +143,7 @@
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.txt_Discount);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.txt_MaterialTotal);
+            this.panel7.Controls.Add(this.txt_TotalMaterial);
             this.panel7.Controls.Add(this.label10);
             this.panel7.Location = new System.Drawing.Point(-1, -1);
             this.panel7.Name = "panel7";
@@ -200,6 +200,7 @@
             this.btuSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btuSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btuSave.UseVisualStyleBackColor = false;
+            this.btuSave.Click += new System.EventHandler(this.btuSave_Click);
             // 
             // txt_Render
             // 
@@ -230,6 +231,8 @@
             this.txt_Payment.TabIndex = 28;
             this.txt_Payment.Text = "0";
             this.txt_Payment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Payment.TextChanged += new System.EventHandler(this.txt_Payment_TextChanged);
+            this.txt_Payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Payment_KeyPress);
             // 
             // label13
             // 
@@ -312,6 +315,8 @@
             this.txt_Discount.TabIndex = 20;
             this.txt_Discount.Text = "0";
             this.txt_Discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Discount.TextChanged += new System.EventHandler(this.txt_Discount_TextChanged);
+            this.txt_Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Discount_KeyPress);
             // 
             // label11
             // 
@@ -323,16 +328,16 @@
             this.label11.Text = "اجمالى الخصم";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_MaterialTotal
+            // txt_TotalMaterial
             // 
-            this.txt_MaterialTotal.Enabled = false;
-            this.txt_MaterialTotal.Location = new System.Drawing.Point(1081, 20);
-            this.txt_MaterialTotal.Name = "txt_MaterialTotal";
-            this.txt_MaterialTotal.ReadOnly = true;
-            this.txt_MaterialTotal.Size = new System.Drawing.Size(125, 20);
-            this.txt_MaterialTotal.TabIndex = 18;
-            this.txt_MaterialTotal.Text = "0";
-            this.txt_MaterialTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_TotalMaterial.Enabled = false;
+            this.txt_TotalMaterial.Location = new System.Drawing.Point(1081, 20);
+            this.txt_TotalMaterial.Name = "txt_TotalMaterial";
+            this.txt_TotalMaterial.ReadOnly = true;
+            this.txt_TotalMaterial.Size = new System.Drawing.Size(125, 20);
+            this.txt_TotalMaterial.TabIndex = 18;
+            this.txt_TotalMaterial.Text = "0";
+            this.txt_TotalMaterial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -383,8 +388,7 @@
             this.Column3,
             this.الكمية,
             this.Column4,
-            this.Column5,
-            this.Column6});
+            this.Column5});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(189)))), ((int)(((byte)(212)))));
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -435,14 +439,6 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 200;
             // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column6.HeaderText = "ميعاد تغيير";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 81;
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -477,6 +473,7 @@
             this.combo_car.Name = "combo_car";
             this.combo_car.Size = new System.Drawing.Size(285, 21);
             this.combo_car.TabIndex = 14;
+            this.combo_car.SelectedIndexChanged += new System.EventHandler(this.combo_car_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -557,6 +554,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // richTextBox1
             // 
@@ -584,6 +582,7 @@
             this.txt_Quantity.Size = new System.Drawing.Size(106, 20);
             this.txt_Quantity.TabIndex = 16;
             this.txt_Quantity.Text = "0";
+            this.txt_Quantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Quantity_KeyPress);
             // 
             // label5
             // 
@@ -602,6 +601,7 @@
             this.txt_Price.Size = new System.Drawing.Size(106, 20);
             this.txt_Price.TabIndex = 14;
             this.txt_Price.Text = "0";
+            this.txt_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -633,6 +633,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Customer_Purchassing_Form";
             this.Text = "Customer_Purchassing_Form";
+            this.Load += new System.EventHandler(this.Customer_Purchassing_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -671,19 +672,12 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_Discount;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_MaterialTotal;
+        private System.Windows.Forms.TextBox txt_TotalMaterial;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn الكمية;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox combo_car;
@@ -701,5 +695,11 @@
         private System.Windows.Forms.TextBox txt_Price;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn الكمية;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
