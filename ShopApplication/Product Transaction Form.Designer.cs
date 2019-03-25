@@ -62,8 +62,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1384, 407);
+            this.dataGridView1.Size = new System.Drawing.Size(1384, 241);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel1
             // 
@@ -78,14 +79,13 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Location = new System.Drawing.Point(0, 56);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1386, 409);
+            this.panel4.Size = new System.Drawing.Size(1386, 243);
             this.panel4.TabIndex = 2;
             // 
             // panel3
@@ -94,9 +94,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.dataGridView2);
-            this.panel3.Location = new System.Drawing.Point(0, 471);
+            this.panel3.Location = new System.Drawing.Point(0, 305);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1386, 209);
+            this.panel3.Size = new System.Drawing.Size(1386, 375);
             this.panel3.TabIndex = 1;
             // 
             // dataGridView2
@@ -116,7 +116,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView2.Size = new System.Drawing.Size(1384, 207);
+            this.dataGridView2.Size = new System.Drawing.Size(1384, 373);
             this.dataGridView2.TabIndex = 41;
             // 
             // Column1
@@ -178,6 +178,7 @@
             this.button1.TabIndex = 33;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimePicker2
             // 

@@ -255,7 +255,6 @@ namespace ShopApplication
                         , new SqlParameter("@Purchasing_ID", int.Parse(txt_BillNumber.Text))
                         , new SqlParameter("@Supplier_ID", (int)combo_car.SelectedValue)
                         , new SqlParameter("@Bill_Date", DateTime.Parse(DateTime.Now.ToString()))
-                        , new SqlParameter("@Payment_Method", "دفع نقدى")
                         , new SqlParameter("@Material_Money", double.Parse(txt_TotalMaterial.Text))
                         , new SqlParameter("@Discount_Money", double.Parse(txt_Discount.Text))
                         , new SqlParameter("@After_Discount", double.Parse(txt_AfterDiscount.Text))
