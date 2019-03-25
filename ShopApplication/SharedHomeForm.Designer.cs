@@ -34,9 +34,6 @@
             this.حسابمصروفاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الخزنةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.حركاتالخزنةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.رأسالمالToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ايداعوصرفاموالToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ايداعوصرفبضاعةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.المصروفاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.النسخالاحتياطىToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.نسخالمحتوىToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,30 +100,9 @@
             // حركاتالخزنةToolStripMenuItem
             // 
             this.حركاتالخزنةToolStripMenuItem.Name = "حركاتالخزنةToolStripMenuItem";
-            this.حركاتالخزنةToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.حركاتالخزنةToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.حركاتالخزنةToolStripMenuItem.Text = "حركات الخزنة";
-            // 
-            // رأسالمالToolStripMenuItem
-            // 
-            this.رأسالمالToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ايداعوصرفاموالToolStripMenuItem,
-            this.ايداعوصرفبضاعةToolStripMenuItem});
-            this.رأسالمالToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.رأسالمالToolStripMenuItem.Name = "رأسالمالToolStripMenuItem";
-            this.رأسالمالToolStripMenuItem.Size = new System.Drawing.Size(88, 25);
-            this.رأسالمالToolStripMenuItem.Text = "رأس المال";
-            // 
-            // ايداعوصرفاموالToolStripMenuItem
-            // 
-            this.ايداعوصرفاموالToolStripMenuItem.Name = "ايداعوصرفاموالToolStripMenuItem";
-            this.ايداعوصرفاموالToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.ايداعوصرفاموالToolStripMenuItem.Text = "ايداع و صرف اموال";
-            // 
-            // ايداعوصرفبضاعةToolStripMenuItem
-            // 
-            this.ايداعوصرفبضاعةToolStripMenuItem.Name = "ايداعوصرفبضاعةToolStripMenuItem";
-            this.ايداعوصرفبضاعةToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.ايداعوصرفبضاعةToolStripMenuItem.Text = "الحساب";
+            this.حركاتالخزنةToolStripMenuItem.Click += new System.EventHandler(this.حركاتالخزنةToolStripMenuItem_Click);
             // 
             // المصروفاتToolStripMenuItem
             // 
@@ -187,7 +163,6 @@
             this.الاصنافوالمخازنToolStripMenuItem,
             this.المصروفاتToolStripMenuItem,
             this.الخزنةToolStripMenuItem,
-            this.رأسالمالToolStripMenuItem,
             this.النسخالاحتياطىToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -363,9 +338,6 @@
         private System.Windows.Forms.ToolStripMenuItem حسابمصروفاتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الخزنةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حركاتالخزنةToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem رأسالمالToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ايداعوصرفاموالToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ايداعوصرفبضاعةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem المصروفاتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem النسخالاحتياطىToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem نسخالمحتوىToolStripMenuItem;

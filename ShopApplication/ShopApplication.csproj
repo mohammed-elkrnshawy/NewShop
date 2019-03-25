@@ -117,6 +117,12 @@
     <Compile Include="Product Transaction Form.Designer.cs">
       <DependentUpon>Product Transaction Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="SafeTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SafeTransactions.Designer.cs">
+      <DependentUpon>SafeTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="SharedClass.cs" />
     <Compile Include="SharedHomeForm.cs">
       <SubType>Form</SubType>
@@ -199,6 +205,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SafeTransactions.resx">
+      <DependentUpon>SafeTransactions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SharedHomeForm.resx">
       <DependentUpon>SharedHomeForm.cs</DependentUpon>
     </EmbeddedResource>

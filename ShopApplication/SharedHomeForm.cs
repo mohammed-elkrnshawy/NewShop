@@ -161,6 +161,11 @@ namespace ShopApplication
             Add_Tab("بيان مصروفات", new Form_Outlay_Payment());
         }
 
+        private void حركاتالخزنةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Add_Tab("حركة الخزنة", new SafeTransactions());
+        }
+
         private void Add_Tab(string Name, Form form)
         {
             TabPage tp = new TabPage(Name);
