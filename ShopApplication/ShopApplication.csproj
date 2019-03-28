@@ -123,6 +123,12 @@
     <Compile Include="SafeTransactions.Designer.cs">
       <DependentUpon>SafeTransactions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shared Login Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared Login Form.Designer.cs">
+      <DependentUpon>Shared Login Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="SharedClass.cs" />
     <Compile Include="SharedHomeForm.cs">
       <SubType>Form</SubType>
@@ -161,6 +167,12 @@
     </Compile>
     <Compile Include="Supplier Transaction Form.Designer.cs">
       <DependentUpon>Supplier Transaction Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Add Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Add Form.Designer.cs">
+      <DependentUpon>User Add Form.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Customer Add Form.resx">
       <DependentUpon>Customer Add Form.cs</DependentUpon>
@@ -208,6 +220,9 @@
     <EmbeddedResource Include="SafeTransactions.resx">
       <DependentUpon>SafeTransactions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Shared Login Form.resx">
+      <DependentUpon>Shared Login Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SharedHomeForm.resx">
       <DependentUpon>SharedHomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Supplier Transaction Form.resx">
       <DependentUpon>Supplier Transaction Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Add Form.resx">
+      <DependentUpon>User Add Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

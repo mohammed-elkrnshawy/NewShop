@@ -16,7 +16,7 @@ namespace ShopApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SharedHomeForm());
+            Application.Run(new Shared_Login_Form());
         }
     }
 }

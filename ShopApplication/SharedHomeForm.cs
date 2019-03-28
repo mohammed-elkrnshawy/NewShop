@@ -13,10 +13,12 @@ namespace ShopApplication
     public partial class SharedHomeForm : Form
     {
         Image closeImage, closeImageAct;
+        private bool isAdmin;
 
-        public SharedHomeForm()
+        public SharedHomeForm(bool isAdmin)
         {
             InitializeComponent();
+            this.isAdmin = isAdmin;
         }
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
@@ -164,6 +166,11 @@ namespace ShopApplication
         private void حركاتالخزنةToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Add_Tab("حركة الخزنة", new SafeTransactions());
+        }
+
+        private void نسخالمحتوىToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Add_Tab("اضافة مستخدمين جدد", new User_Add_Form());
         }
 
         private void Add_Tab(string Name, Form form)

@@ -37,7 +37,6 @@
             this.المصروفاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.النسخالاحتياطىToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.نسخالمحتوىToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.استعادةالمحتوىToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.خردالمخازنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -100,7 +99,7 @@
             // حركاتالخزنةToolStripMenuItem
             // 
             this.حركاتالخزنةToolStripMenuItem.Name = "حركاتالخزنةToolStripMenuItem";
-            this.حركاتالخزنةToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.حركاتالخزنةToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.حركاتالخزنةToolStripMenuItem.Text = "حركات الخزنة";
             this.حركاتالخزنةToolStripMenuItem.Click += new System.EventHandler(this.حركاتالخزنةToolStripMenuItem_Click);
             // 
@@ -118,24 +117,18 @@
             // النسخالاحتياطىToolStripMenuItem
             // 
             this.النسخالاحتياطىToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.نسخالمحتوىToolStripMenuItem,
-            this.استعادةالمحتوىToolStripMenuItem});
+            this.نسخالمحتوىToolStripMenuItem});
             this.النسخالاحتياطىToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.النسخالاحتياطىToolStripMenuItem.Name = "النسخالاحتياطىToolStripMenuItem";
-            this.النسخالاحتياطىToolStripMenuItem.Size = new System.Drawing.Size(124, 25);
-            this.النسخالاحتياطىToolStripMenuItem.Text = "النسخ الاحتياطى";
+            this.النسخالاحتياطىToolStripMenuItem.Size = new System.Drawing.Size(100, 25);
+            this.النسخالاحتياطىToolStripMenuItem.Text = "المستخدمين";
             // 
             // نسخالمحتوىToolStripMenuItem
             // 
             this.نسخالمحتوىToolStripMenuItem.Name = "نسخالمحتوىToolStripMenuItem";
-            this.نسخالمحتوىToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
-            this.نسخالمحتوىToolStripMenuItem.Text = "نسخ المحتوى";
-            // 
-            // استعادةالمحتوىToolStripMenuItem
-            // 
-            this.استعادةالمحتوىToolStripMenuItem.Name = "استعادةالمحتوىToolStripMenuItem";
-            this.استعادةالمحتوىToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
-            this.استعادةالمحتوىToolStripMenuItem.Text = "استعادة المحتوى";
+            this.نسخالمحتوىToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.نسخالمحتوىToolStripMenuItem.Text = "اضافة مستخدمين";
+            this.نسخالمحتوىToolStripMenuItem.Click += new System.EventHandler(this.نسخالمحتوىToolStripMenuItem_Click);
             // 
             // خردالمخازنToolStripMenuItem
             // 
@@ -341,7 +334,6 @@
         private System.Windows.Forms.ToolStripMenuItem المصروفاتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem النسخالاحتياطىToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem نسخالمحتوىToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem استعادةالمحتوىToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem خردالمخازنToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.MenuStrip menuStrip1;
