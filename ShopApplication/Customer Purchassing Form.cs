@@ -271,5 +271,22 @@ namespace ShopApplication
                new SqlParameter("@Total_Money", double.Parse(txt_Render.Text)));
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (combo_car.SelectedIndex >= 0 && dataGridView1.Rows.Count > 0)
+            {
+                EditCustomerAccount();
+                AddPurchasingBill();
+                AddIMBill_Details();
+                EditStore();
+                EditSafe();
+                MessageBox.Show(SharedClass.Successful_Message);
+                DetailsPrint detailsPrint = new DetailsPrint(int.Parse(txt_BillNumber.Text), combo_car.Text,double.Parse(txt_Discount.Text),double.Parse(txt_Payment.Text));
+                detailsPrint.ShowDialog();
+                RefForm();
+            }
+            else
+                MessageBox.Show(SharedClass.Check_Message);
+        }
     }
 }
