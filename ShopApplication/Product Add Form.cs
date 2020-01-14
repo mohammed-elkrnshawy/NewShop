@@ -64,10 +64,10 @@ namespace ShopApplication
         private void SaveData()
         {
             Ezzat.ExecutedNoneQuery("insert_Product",
-                    new SqlParameter("@customerName", txt_Name.Text),
-                    new SqlParameter("@Price", double.Parse(txt_Price.Text)),
-                    new SqlParameter("@SPrice", double.Parse(txt_SPrice.Text)),
-                    new SqlParameter("@Quantity", double.Parse(txtQuantity.Text))
+                    new SqlParameter("@Product_Name", txt_Name.Text),
+                    new SqlParameter("@Product_Price", double.Parse(txt_Price.Text)),
+                    new SqlParameter("@Product_Sell", double.Parse(txt_SPrice.Text)),
+                    new SqlParameter("@Product_Quantity", int.Parse(txtQuantity.Text))
                     );
 
             MessageBox.Show(SharedClass.Successful_Message);
@@ -94,7 +94,8 @@ namespace ShopApplication
             bt_save.Enabled = false;
 
             SqlConnection con;
-            SqlDataReader dataReader = Ezzat.GetDataReader("Product_selectSearch_BYID", out con, new SqlParameter("@Customer_Id", customer_ID));
+            SqlDataReader dataReader = Ezzat.GetDataReader("Product_selectSearch_BYID",
+                out con, new SqlParameter("@Product_ID", customer_ID));
 
 
             if (dataReader.HasRows)
@@ -103,7 +104,7 @@ namespace ShopApplication
                 {
                     txt_Name.Text = dataReader["Product_Name"].ToString();
                     txt_Price.Text = dataReader["Product_Price"].ToString();
-                    txt_SPrice.Text = dataReader["Product_SPrice"].ToString();
+                    txt_SPrice.Text = dataReader["Product_Sell"].ToString();
                     txtQuantity.Text = dataReader["Product_Quantity"].ToString();
 
                 }
@@ -136,8 +137,8 @@ namespace ShopApplication
             Ezzat.ExecutedNoneQuery("Product_updateProduct"
                 , new SqlParameter("@Product_Name", txt_Name.Text)
                 , new SqlParameter("@Product_Price",double.Parse(txt_Price.Text))
-                , new SqlParameter("@Product_SPrice",double.Parse(txt_SPrice.Text))
-                , new SqlParameter("@Customer_ID", Customer_ID)
+                , new SqlParameter("@Product_Sell",double.Parse(txt_SPrice.Text))
+                , new SqlParameter("@Product_ID", Customer_ID)
                 );
             MessageBox.Show(SharedClass.Edit_Message);
         }

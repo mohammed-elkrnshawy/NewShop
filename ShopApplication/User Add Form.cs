@@ -56,8 +56,8 @@ namespace ShopApplication
         private void SaveData()
         {
             Ezzat.ExecutedNoneQuery("insert_Users",
-                    new SqlParameter("@customerName", tb_name.Text),
-                    new SqlParameter("@customerphone", tb_phone.Text),
+                    new SqlParameter("@Username", tb_name.Text),
+                    new SqlParameter("@Password", tb_phone.Text),
                     new SqlParameter("@customerType", radioButton1.Checked)
                );
 
@@ -79,7 +79,7 @@ namespace ShopApplication
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            using (ds = Ezzat.GetDataSet("Users_selectSearch", "X", new SqlParameter("text", textBox6.Text)))
+            using (ds = Ezzat.GetDataSet("Users_selectSearch", "X", new SqlParameter("@text", textBox6.Text)))
             {
                 dataGridView1.DataSource = ds.Tables["X"];
             }
@@ -97,7 +97,7 @@ namespace ShopApplication
             bt_save.Enabled = false;
 
             SqlConnection con;
-            SqlDataReader dataReader = Ezzat.GetDataReader("Users_selectSearch_BYID", out con, new SqlParameter("@Customer_Id", customer_ID));
+            SqlDataReader dataReader = Ezzat.GetDataReader("Users_selectSearch_BYID", out con, new SqlParameter("@user_ID", customer_ID));
 
 
             if (dataReader.HasRows)
@@ -106,7 +106,7 @@ namespace ShopApplication
                 {
                     tb_name.Text = dataReader["Username"].ToString();
                     tb_phone.Text = dataReader["Password"].ToString();
-                    bool isAdmin = (bool)dataReader["User_Type"];
+                    bool isAdmin = (bool)dataReader["isAdmin"];
                     if (isAdmin)
                         radioButton1.Checked = true;
                     else
@@ -139,10 +139,10 @@ namespace ShopApplication
         private void EditData()
         {
             Ezzat.ExecutedNoneQuery("User_updateUser"
-                , new SqlParameter("@Customer_Name", tb_name.Text)
-                , new SqlParameter("@Customer_Address", radioButton1.Checked)
-                , new SqlParameter("@Customer_Phone", tb_phone.Text)
-                , new SqlParameter("@Customer_ID", Customer_ID)
+                , new SqlParameter("@Username", tb_name.Text)
+                , new SqlParameter("@userType", radioButton1.Checked)
+                , new SqlParameter("@Password", tb_phone.Text)
+                , new SqlParameter("@user_ID", Customer_ID)
                 );
             MessageBox.Show(SharedClass.Edit_Message);
         }

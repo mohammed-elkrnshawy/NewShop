@@ -60,13 +60,13 @@ namespace ShopApplication
                     dataGridView2[2, dataGridView2.Rows.Count - 1].Value = Ezzat.ExecutedScalar("select_SUMofProduct__IM"
                                                         , new SqlParameter("@Day", dateTimePicker1.Value)
                                                         , new SqlParameter("@Day2", dateTimePicker2.Value)
-                                                        , new SqlParameter("@product_ID", dataReader[0])
+                                                        , new SqlParameter("@Product_ID", dataReader[0])
                                                         );
-                    dataGridView2[3, dataGridView2.Rows.Count - 1].Value = Ezzat.ExecutedScalar("select_SUMofProduct__EX"
-                                                        , new SqlParameter("@Day", dateTimePicker1.Value)
-                                                        , new SqlParameter("@Day2", dateTimePicker2.Value)
-                                                        , new SqlParameter("@product_ID", dataReader[0])
-                                                        );
+                    //dataGridView2[3, dataGridView2.Rows.Count - 1].Value = Ezzat.ExecutedScalar("select_SUMofProduct__EX"
+                    //                                    , new SqlParameter("@Day", dateTimePicker1.Value)
+                    //                                    , new SqlParameter("@Day2", dateTimePicker2.Value)
+                    //                                    , new SqlParameter("@product_ID", dataReader[0])
+                    //                                    );
                 }
             }
         }

@@ -58,7 +58,7 @@ namespace ShopApplication
         private void ShowDetailsSupplier(int selectedValue)
         {
             SqlConnection con;
-            SqlDataReader dataReader = Ezzat.GetDataReader("Supplier_selectSearch_BYID", out con, new SqlParameter("@Customer_ID", selectedValue));
+            SqlDataReader dataReader = Ezzat.GetDataReader("Supplier_selectSearch_BYID", out con, new SqlParameter("@Supplier_ID", selectedValue));
 
 
             if (dataReader.HasRows)

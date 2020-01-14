@@ -94,7 +94,7 @@ namespace ShopApplication
             bt_save.Enabled = false;
 
             SqlConnection con;
-            SqlDataReader dataReader = Ezzat.GetDataReader("Supplier_selectSearch_BYID", out con, new SqlParameter("@Customer_Id", customer_ID));
+            SqlDataReader dataReader = Ezzat.GetDataReader("Supplier_selectSearch_BYID", out con, new SqlParameter("@Supplier_ID", customer_ID));
 
 
             if (dataReader.HasRows)
@@ -137,7 +137,7 @@ namespace ShopApplication
                 , new SqlParameter("@Supplier_Name", txt_Name.Text)
                 , new SqlParameter("@Supplier_Address", txt_Address.Text)
                 , new SqlParameter("@Supplier_Phone", txt_Phone.Text)
-                , new SqlParameter("@Customer_ID", Customer_ID)
+                , new SqlParameter("@Supplier_ID", Customer_ID)
                 );
             MessageBox.Show(SharedClass.Edit_Message);
         }
@@ -149,7 +149,7 @@ namespace ShopApplication
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            using (ds = Ezzat.GetDataSet("Supplier_selectSearch", "X", new SqlParameter("text", textBox6.Text)))
+            using (ds = Ezzat.GetDataSet("Supplier_selectSearch", "X", new SqlParameter("@text", textBox6.Text)))
             {
                 dataGridView1.DataSource = ds.Tables["X"];
             }

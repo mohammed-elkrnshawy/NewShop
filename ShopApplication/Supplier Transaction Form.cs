@@ -24,7 +24,7 @@ namespace ShopApplication
         {
             txtExport.Text = txtImport.Text = txtAfter.Text = "0.00";
 
-        
+
             using (ds = Ezzat.GetDataSet("Supplier_selectAll", "X"))
             {
                 combo_name.DataSource = ds.Tables["X"];
@@ -34,7 +34,7 @@ namespace ShopApplication
                 combo_name.SelectedText = "اختار اسم المورد";
             }
 
-          
+
 
         }
 
@@ -51,13 +51,15 @@ namespace ShopApplication
                 using (ds = Ezzat.GetDataSet("Supplier_selectSupplierAccount", "X"
                     , new SqlParameter("@Day", dateTimePicker1.Value)
                     , new SqlParameter("@Day2", dateTimePicker2.Value)
-                    , new SqlParameter("@Supplier_ID", combo_name.SelectedValue)))  {
+                    , new SqlParameter("@Supplier_ID", combo_name.SelectedValue)))
+                {
                     dataGridView1.DataSource = ds.Tables["X"];
 
                     //dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
 
-                object o = Ezzat.ExecutedScalar("Supplier_selectSupplierAccount_Purchasing", new SqlParameter("@Day", dateTimePicker1.Value)
+                object o = Ezzat.ExecutedScalar("Supplier_selectSupplierAccount_Purchasing"
+                    , new SqlParameter("@Day", dateTimePicker1.Value)
                     , new SqlParameter("@Day2", dateTimePicker2.Value)
                     , new SqlParameter("@Supplier_ID", combo_name.SelectedValue));
 
@@ -76,6 +78,7 @@ namespace ShopApplication
                     txtExport.Text = o.ToString();
 
                 txtAfter.Text = String.Format("{0:0.00}", Math.Round((double.Parse(txtImport.Text) - double.Parse(txtExport.Text)), 2));
+
             }
             else { }
         }

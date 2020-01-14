@@ -80,7 +80,8 @@ namespace ShopApplication
         {
 
             SqlConnection con;
-            SqlDataReader dataReader = Ezzat.GetDataReader("Product_selectSearch_BYID", out con, new SqlParameter("@Customer_ID", customer_ID));
+            SqlDataReader dataReader = Ezzat.GetDataReader("Product_selectSearch_BYID",
+                out con, new SqlParameter("@Product_ID", customer_ID));
 
 
             if (dataReader.HasRows)
@@ -106,7 +107,8 @@ namespace ShopApplication
         private void ShowDetailsSupplier(int selectedValue)
         {
             SqlConnection con;
-            SqlDataReader dataReader = Ezzat.GetDataReader("Supplier_selectSearch_BYID", out con, new SqlParameter("@Customer_ID", selectedValue));
+            SqlDataReader dataReader = Ezzat.GetDataReader("Supplier_selectSearch_BYID",
+                out con, new SqlParameter("@Supplier_ID", selectedValue));
 
 
             if (dataReader.HasRows)
@@ -219,7 +221,9 @@ namespace ShopApplication
 
         private void EditSuplierAccount()
         {
-            Ezzat.ExecutedNoneQuery("Supplier_updateTotalMoney", new SqlParameter("@Supplier_ID",combo_name.SelectedValue), new SqlParameter("@Total_Money", double.Parse(txt_afterPayment.Text)));
+            Ezzat.ExecutedNoneQuery("Supplier_updateTotalMoney",
+                new SqlParameter("@Supplier_ID",combo_name.SelectedValue),
+                new SqlParameter("@Total_Money", double.Parse(txt_afterPayment.Text)));
         }
 
         private void AddPurchasingBill()
@@ -248,7 +252,7 @@ namespace ShopApplication
                     , new SqlParameter("@Material_ID", int.Parse(item.Cells[0].Value.ToString()))
                     , new SqlParameter("@Material_Name", item.Cells[1].Value.ToString())
                     , new SqlParameter("@Material_PricePerUnit", item.Cells[2].Value.ToString())
-                    , new SqlParameter("@Material_Quantity", float.Parse(item.Cells[3].Value + ""))
+                    , new SqlParameter("@Material_Quantity", int.Parse(item.Cells[3].Value + ""))
                     , new SqlParameter("@Unit", item.Cells[4].Value.ToString())
                     , new SqlParameter("@Total", float.Parse(item.Cells[5].Value + ""))
                     , new SqlParameter("@Bill_Type", true)
