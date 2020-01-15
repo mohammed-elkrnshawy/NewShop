@@ -45,7 +45,7 @@ namespace ShopApplication
                 using (ds = Ezzat.GetDataSet("Customer_selectCustomerAccount", "X"
                     , new SqlParameter("@Day", dateTimePicker1.Value)
                     , new SqlParameter("@Day2", dateTimePicker2.Value)
-                    , new SqlParameter("@Supplier_ID", combo_Supliers.SelectedValue))) ;
+                    , new SqlParameter("@Customer_ID", combo_Supliers.SelectedValue))) ;
                 {
                     dataGridView1.DataSource = ds.Tables["X"];
 

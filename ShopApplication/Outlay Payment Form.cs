@@ -79,6 +79,7 @@ namespace ShopApplication
         {
             // اضافة تعامل مصاريف
             Ezzat.ExecutedNoneQuery("Outlay_insertOutlayTransaction",
+                new SqlParameter("@Report_ID", int.Parse(textBox1.Text)),
                 new SqlParameter("@Report_Total", float.Parse(textBox4.Text)),
                 new SqlParameter("@Report_Notes", richTextBox1.Text),
                 new SqlParameter("@Report_Date", DateTime.Parse(DateTime.Now.ToString())),

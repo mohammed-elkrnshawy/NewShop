@@ -77,7 +77,7 @@ namespace ShopApplication
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            using (ds = Ezzat.GetDataSet("Customer_selectSearch", "X", new SqlParameter("text", textBox6.Text)))
+            using (ds = Ezzat.GetDataSet("Customer_selectSearch", "X", new SqlParameter("@text", textBox6.Text)))
             {
                 dataGridView1.DataSource = ds.Tables["X"];
             }
@@ -96,7 +96,8 @@ namespace ShopApplication
             bt_save.Enabled = false;
 
             SqlConnection con;
-            SqlDataReader dataReader = Ezzat.GetDataReader("Customer_selectSearch_BYID", out con, new SqlParameter("@Customer_Id", customer_ID));
+            SqlDataReader dataReader = Ezzat.GetDataReader("Customer_selectSearch_BYID", 
+                out con, new SqlParameter("@Customer_Id", customer_ID));
 
 
             if (dataReader.HasRows)

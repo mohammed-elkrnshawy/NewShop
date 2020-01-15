@@ -57,7 +57,7 @@ namespace ShopApplication
         private void ShowDetailsCustomer(int selectedValue)
         {
             SqlConnection con;
-            SqlDataReader dataReader = Ezzat.GetDataReader("Customer_selectSearch_BYID", out con, new SqlParameter("@Customer_ID", selectedValue));
+            SqlDataReader dataReader = Ezzat.GetDataReader("Customer_selectSearch_BYID", out con, new SqlParameter("@Customer_Id", selectedValue));
 
 
             if (dataReader.HasRows)
@@ -120,11 +120,12 @@ namespace ShopApplication
         {
             Ezzat.ExecutedNoneQuery("Customer_insertPaybackBill"
                        , new SqlParameter("@Purchasing_ID", int.Parse(txt_billNumber.Text))
-                       , new SqlParameter("@Supplier_ID", (int)combo_name.SelectedValue)
+                       , new SqlParameter("@Customer_ID", (int)combo_name.SelectedValue)
                        , new SqlParameter("@Bill_Date", DateTime.Parse(DateTime.Now.ToString()))
                        , new SqlParameter("@Total_oldMoney", double.Parse(txt_OldMoney.Text))
                        , new SqlParameter("@Payment_Money", double.Parse(txt_Payment.Text))
                        , new SqlParameter("@After_Payment", double.Parse(txt_Render.Text))
+                       , new SqlParameter("@Bill_Details", richTextBox1.Text)
                );
         }
 

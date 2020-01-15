@@ -103,7 +103,8 @@ namespace ShopApplication
         private void ShowDetailsCustomer(int selectedValue)
         {
             SqlConnection con;
-            SqlDataReader dataReader = Ezzat.GetDataReader("Customer_selectSearch_BYID", out con, new SqlParameter("@Customer_ID", selectedValue));
+            SqlDataReader dataReader = Ezzat.GetDataReader("Customer_selectSearch_BYID",
+                out con, new SqlParameter("@Customer_Id", selectedValue));
 
 
             if (dataReader.HasRows)
@@ -137,14 +138,15 @@ namespace ShopApplication
         {
 
             SqlConnection con;
-            SqlDataReader dataReader = Ezzat.GetDataReader("Product_selectSearch_BYID", out con, new SqlParameter("@Customer_ID", customer_ID));
+            SqlDataReader dataReader = Ezzat.GetDataReader("Product_selectSearch_BYID",
+                out con, new SqlParameter("@Product_ID", customer_ID));
 
 
             if (dataReader.HasRows)
             {
                 while (dataReader.Read())
                 {
-                    txt_Price.Text = dataReader["Product_SPrice"].ToString();
+                    txt_Price.Text = dataReader["Product_Sell"].ToString();
                 }
             }
             con.Close();
@@ -253,7 +255,7 @@ namespace ShopApplication
         {
             Ezzat.ExecutedNoneQuery("Customer_insertPurchasingBill"
                         , new SqlParameter("@Purchasing_ID", int.Parse(txt_BillNumber.Text))
-                        , new SqlParameter("@Supplier_ID", (int)combo_car.SelectedValue)
+                        , new SqlParameter("@Customer_ID", (int)combo_car.SelectedValue)
                         , new SqlParameter("@Bill_Date", DateTime.Parse(DateTime.Now.ToString()))
                         , new SqlParameter("@Material_Money", double.Parse(txt_TotalMaterial.Text))
                         , new SqlParameter("@Discount_Money", double.Parse(txt_Discount.Text))
