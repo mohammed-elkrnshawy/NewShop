@@ -43,13 +43,27 @@ namespace ShopApplication
                 while (dataReader.Read())
                 {
                     dataGridView1.Rows.Add();
-                    dataGridView1[0, dataGridView1.Rows.Count - 1].Value = dataReader[0].ToString();
-                    dataGridView1[1, dataGridView1.Rows.Count - 1].Value = dataReader[1].ToString();
-                    dataGridView1[2, dataGridView1.Rows.Count - 1].Value = dataReader[2].ToString();
-                    dataGridView1[3, dataGridView1.Rows.Count - 1].Value = (double.Parse(dataReader[1].ToString()) - double.Parse(dataReader[2].ToString()));
-                    dataGridView1[4, dataGridView1.Rows.Count - 1].Value = dataReader[3].ToString();
-                    dataGridView1[5, dataGridView1.Rows.Count - 1].Value = dataReader[4].ToString();
+                    dataGridView1[0, dataGridView1.Rows.Count - 1].Value = dataReader[2].ToString();
+                    if (bool.Parse(dataReader[1].ToString())) 
+                    {
+                        dataGridView1[1, dataGridView1.Rows.Count - 1].Value = dataReader[5].ToString();
+                        dataGridView1[2, dataGridView1.Rows.Count - 1].Value = "0.0000";
+                        dataGridView1[3, dataGridView1.Rows.Count - 1].Value = dataReader[5].ToString();
+                    }
+                    else
+                    {
+                        dataGridView1[2, dataGridView1.Rows.Count - 1].Value = dataReader[5].ToString();
+                        dataGridView1[1, dataGridView1.Rows.Count - 1].Value = "0.0000";
+                        dataGridView1[3, dataGridView1.Rows.Count - 1].Value = (double.Parse(dataReader[5].ToString())*-1);
+                    }
+                    dataGridView1[4, dataGridView1.Rows.Count - 1].Value = dataReader[4].ToString();
+                    dataGridView1[5, dataGridView1.Rows.Count - 1].Value = dataReader[3].ToString();
                 }
+                dataGridView1.Columns[1].AutoSizeMode =
+                dataGridView1.Columns[2].AutoSizeMode =
+                dataGridView1.Columns[3].AutoSizeMode =
+                dataGridView1.Columns[4].AutoSizeMode =
+                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
 
             con.Close();

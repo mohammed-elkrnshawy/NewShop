@@ -119,7 +119,7 @@ namespace ShopApplication
                 }
             }
             con.Close();
-
+            Calcolate();
         }
 
         private void txt_quantity_KeyPress(object sender, KeyPressEventArgs e)

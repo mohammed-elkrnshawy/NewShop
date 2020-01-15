@@ -35,7 +35,10 @@ namespace ShopApplication
                    new SqlParameter("@Day2", DateTime.Parse(dateTimePicker2.Value.ToString()))))
             {
                 dataGridView1.DataSource = ds.Tables["X"];
-                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[1].AutoSizeMode =
+                dataGridView1.Columns[2].AutoSizeMode =
+                dataGridView1.Columns[3].AutoSizeMode =
+                DataGridViewAutoSizeColumnMode.Fill;
                 //Add_GridButtun();
             }
 
@@ -62,12 +65,16 @@ namespace ShopApplication
                                                         , new SqlParameter("@Day2", dateTimePicker2.Value)
                                                         , new SqlParameter("@Product_ID", dataReader[0])
                                                         );
-                    //dataGridView2[3, dataGridView2.Rows.Count - 1].Value = Ezzat.ExecutedScalar("select_SUMofProduct__EX"
-                    //                                    , new SqlParameter("@Day", dateTimePicker1.Value)
-                    //                                    , new SqlParameter("@Day2", dateTimePicker2.Value)
-                    //                                    , new SqlParameter("@product_ID", dataReader[0])
-                    //                                    );
+                    dataGridView2[3, dataGridView2.Rows.Count - 1].Value = Ezzat.ExecutedScalar("select_SUMofProduct__EX"
+                                                        , new SqlParameter("@Day", dateTimePicker1.Value)
+                                                        , new SqlParameter("@Day2", dateTimePicker2.Value)
+                                                        , new SqlParameter("@product_ID", dataReader[0])
+                                                        );
                 }
+
+                dataGridView2.Columns[1].AutoSizeMode =
+                dataGridView2.Columns[2].AutoSizeMode =
+                dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
 

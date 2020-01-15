@@ -34,8 +34,6 @@ namespace ShopApplication
                 combo_name.SelectedText = "اختار اسم المورد";
             }
 
-
-
         }
 
         private void Supplier_Transaction_Form_Load(object sender, EventArgs e)
@@ -55,7 +53,10 @@ namespace ShopApplication
                 {
                     dataGridView1.DataSource = ds.Tables["X"];
 
-                    //dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView1.Columns[1].AutoSizeMode =
+                    dataGridView1.Columns[2].AutoSizeMode =
+                    dataGridView1.Columns[3].AutoSizeMode =
+                    dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
 
                 object o = Ezzat.ExecutedScalar("Supplier_selectSupplierAccount_Purchasing"

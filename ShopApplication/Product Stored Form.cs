@@ -25,6 +25,11 @@ namespace ShopApplication
             {
                 dataGridView1.DataSource = ds.Tables["X"];
             }
+            dataGridView1.Columns[0].AutoSizeMode =
+            dataGridView1.Columns[1].AutoSizeMode =
+            dataGridView1.Columns[2].AutoSizeMode =
+            dataGridView1.Columns[3].AutoSizeMode =
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }

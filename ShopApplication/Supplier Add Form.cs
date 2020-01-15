@@ -24,7 +24,7 @@ namespace ShopApplication
         private void Supplier_Add_Form_Load(object sender, EventArgs e)
         {
             RefForm();
-            //dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void RefForm()

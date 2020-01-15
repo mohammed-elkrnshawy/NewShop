@@ -63,7 +63,9 @@ namespace ShopApplication
 
         private void Search()
         {
-            using (ds = Ezzat.GetDataSet("Outlay_During", "X", new SqlParameter("@Day", dateTimePicker1.Value), new SqlParameter("@Day2", dateTimePicker2.Value)))
+            using (ds = Ezzat.GetDataSet("Outlay_During", "X",
+                new SqlParameter("@Day", dateTimePicker1.Value),
+                new SqlParameter("@Day2", dateTimePicker2.Value)))
             {
                 dataGridView1.DataSource = ds.Tables["x"];
 

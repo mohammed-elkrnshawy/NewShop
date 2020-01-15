@@ -49,7 +49,10 @@ namespace ShopApplication
                 {
                     dataGridView1.DataSource = ds.Tables["X"];
 
-                    //dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView1.Columns[1].AutoSizeMode =
+                     dataGridView1.Columns[2].AutoSizeMode =
+                     dataGridView1.Columns[3].AutoSizeMode =
+                     dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
 
                 object o = Ezzat.ExecutedScalar("Customer_selectCustomerAccount_Pay", new SqlParameter("@Day", dateTimePicker1.Value)
