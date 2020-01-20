@@ -173,6 +173,11 @@ namespace ShopApplication
             Add_Tab("اضافة مستخدمين جدد", new User_Add_Form());
         }
 
+        private void فاتورةمرتجعToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Add_Tab("فاتورة مرتجع من العميل", new Customer_Returning_Form ());
+        }
+
         private void Add_Tab(string Name, Form form)
         {
             TabPage tp = new TabPage(Name);

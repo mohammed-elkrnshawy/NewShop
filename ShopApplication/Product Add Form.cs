@@ -35,11 +35,12 @@ namespace ShopApplication
         private void RefForm()
         {
             txtQuantity.Enabled = true;
+            txtCode.Enabled = true;
             bt_save.Enabled = true;
             bt_edit.Enabled = false;
 
 
-            txt_Name.Text = "";
+            txt_Name.Text =txtCode.Text = "";
             txt_Price.Text=txtQuantity.Text=txt_SPrice.Text = "0";
 
             using (ds = Ezzat.GetDataSet("Product_selectAll", "X"))
@@ -52,7 +53,7 @@ namespace ShopApplication
 
         private void ValidDataSave()
         {
-            if (ValidText(txt_Name) && ValidText(txt_Price) && ValidText(txt_SPrice) && ValidText(txtQuantity))
+            if (ValidText(txt_Name) && ValidText(txt_Price) && ValidText(txt_SPrice) && ValidText(txtQuantity) && ValidText(txtCode))
             {
                 SaveData();
                 RefForm();
@@ -69,7 +70,8 @@ namespace ShopApplication
                     new SqlParameter("@Product_Name", txt_Name.Text),
                     new SqlParameter("@Product_Price", double.Parse(txt_Price.Text)),
                     new SqlParameter("@Product_Sell", double.Parse(txt_SPrice.Text)),
-                    new SqlParameter("@Product_Quantity", int.Parse(txtQuantity.Text))
+                    new SqlParameter("@Product_Quantity", int.Parse(txtQuantity.Text)),
+                    new SqlParameter("@Product_Code", txtCode.Text)
                     );
 
             MessageBox.Show(SharedClass.Successful_Message);
@@ -86,6 +88,7 @@ namespace ShopApplication
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtQuantity.Enabled = false;
+            txtCode.Enabled = false;
             Customer_ID = (int)dataGridView1.CurrentRow.Cells[0].Value;
             ShowDetails(Customer_ID);
         }
@@ -108,6 +111,7 @@ namespace ShopApplication
                     txt_Price.Text = dataReader["Product_Price"].ToString();
                     txt_SPrice.Text = dataReader["Product_Sell"].ToString();
                     txtQuantity.Text = dataReader["Product_Quantity"].ToString();
+                    txtCode.Text = dataReader["Product_Code"].ToString();
 
                 }
             }
@@ -171,6 +175,16 @@ namespace ShopApplication
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             SharedClass.KeyPress(txtQuantity, e);
+        }
+
+        private void txt_SPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SharedClass.KeyPress(txtCode, e);
         }
     }
 }

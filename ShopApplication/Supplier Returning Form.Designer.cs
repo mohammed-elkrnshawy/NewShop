@@ -597,6 +597,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Supplier_Returning_Form";
             this.Text = "Supplier_Returning_Form";
+            this.Load += new System.EventHandler(this.Supplier_Returning_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();

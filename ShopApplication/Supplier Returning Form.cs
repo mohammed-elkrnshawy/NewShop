@@ -16,5 +16,10 @@ namespace ShopApplication
         {
             InitializeComponent();
         }
+
+        private void Supplier_Returning_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

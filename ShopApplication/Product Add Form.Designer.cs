@@ -50,6 +50,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.bt_edit = new System.Windows.Forms.Button();
             this.bt_save = new System.Windows.Forms.Button();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -73,7 +75,7 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(123, 354);
+            this.txtQuantity.Location = new System.Drawing.Point(123, 312);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(196, 20);
             this.txtQuantity.TabIndex = 18;
@@ -83,7 +85,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(371, 346);
+            this.label6.Location = new System.Drawing.Point(371, 304);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(155, 30);
             this.label6.TabIndex = 17;
@@ -92,16 +94,17 @@
             // 
             // txt_SPrice
             // 
-            this.txt_SPrice.Location = new System.Drawing.Point(123, 311);
+            this.txt_SPrice.Location = new System.Drawing.Point(123, 269);
             this.txt_SPrice.Name = "txt_SPrice";
             this.txt_SPrice.Size = new System.Drawing.Size(196, 20);
             this.txt_SPrice.TabIndex = 14;
             this.txt_SPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_SPrice.TextChanged += new System.EventHandler(this.txt_SPrice_TextChanged);
             this.txt_SPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SPrice_KeyPress);
             // 
             // txt_Price
             // 
-            this.txt_Price.Location = new System.Drawing.Point(123, 267);
+            this.txt_Price.Location = new System.Drawing.Point(123, 225);
             this.txt_Price.Name = "txt_Price";
             this.txt_Price.Size = new System.Drawing.Size(196, 20);
             this.txt_Price.TabIndex = 13;
@@ -110,7 +113,7 @@
             // 
             // txt_Name
             // 
-            this.txt_Name.Location = new System.Drawing.Point(123, 225);
+            this.txt_Name.Location = new System.Drawing.Point(123, 183);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(196, 20);
             this.txt_Name.TabIndex = 12;
@@ -119,7 +122,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(371, 303);
+            this.label4.Location = new System.Drawing.Point(371, 261);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 30);
             this.label4.TabIndex = 11;
@@ -129,7 +132,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(371, 259);
+            this.label3.Location = new System.Drawing.Point(371, 217);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 30);
             this.label3.TabIndex = 10;
@@ -141,6 +144,8 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txtCode);
+            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.txtQuantity);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.txt_SPrice);
@@ -157,7 +162,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(371, 217);
+            this.label2.Location = new System.Drawing.Point(371, 175);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 30);
             this.label2.TabIndex = 9;
@@ -302,6 +307,25 @@
             this.bt_save.UseVisualStyleBackColor = false;
             this.bt_save.Click += new System.EventHandler(this.bt_save_Click);
             // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(123, 356);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(196, 20);
+            this.txtCode.TabIndex = 20;
+            this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(371, 348);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(155, 30);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "كود المنتج";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Product_Add_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,5 +376,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button bt_edit;
         private System.Windows.Forms.Button bt_save;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label label5;
     }
 }

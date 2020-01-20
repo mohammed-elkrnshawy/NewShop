@@ -90,6 +90,8 @@
             // 
             // comboProduct
             // 
+            this.comboProduct.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboProduct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboProduct.FormattingEnabled = true;
             this.comboProduct.Location = new System.Drawing.Point(248, 14);
             this.comboProduct.Name = "comboProduct";
@@ -405,7 +407,7 @@
             this.Column1.HeaderText = "رقم المنتج";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 78;
+            this.Column1.Width = 81;
             // 
             // Column2
             // 

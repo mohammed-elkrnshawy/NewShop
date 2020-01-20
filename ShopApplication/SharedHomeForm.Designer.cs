@@ -55,6 +55,7 @@
             this.اضافةالاصنافToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.فاتورةمرتجعToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -170,7 +171,8 @@
             this.اضافةسيارةعميلToolStripMenuItem,
             this.فاتورةصيانةجديدةToolStripMenuItem,
             this.تسديدمنعميلToolStripMenuItem,
-            this.حسابعميلToolStripMenuItem});
+            this.حسابعميلToolStripMenuItem,
+            this.فاتورةمرتجعToolStripMenuItem});
             this.السياراتوالعملاءToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.السياراتوالعملاءToolStripMenuItem.Name = "السياراتوالعملاءToolStripMenuItem";
             this.السياراتوالعملاءToolStripMenuItem.Size = new System.Drawing.Size(65, 25);
@@ -302,6 +304,13 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "الرئيسية";
             // 
+            // فاتورةمرتجعToolStripMenuItem
+            // 
+            this.فاتورةمرتجعToolStripMenuItem.Name = "فاتورةمرتجعToolStripMenuItem";
+            this.فاتورةمرتجعToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.فاتورةمرتجعToolStripMenuItem.Text = "فاتورة مرتجع";
+            this.فاتورةمرتجعToolStripMenuItem.Click += new System.EventHandler(this.فاتورةمرتجعToolStripMenuItem_Click);
+            // 
             // SharedHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +361,7 @@
         private System.Windows.Forms.ToolStripMenuItem اضافةالاصنافToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ToolStripMenuItem فاتورةمرتجعToolStripMenuItem;
     }
 }
 
