@@ -37,15 +37,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btuSave = new System.Windows.Forms.Button();
-            this.txt_TotalMoney = new System.Windows.Forms.TextBox();
+            this.txt_Total = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txt_OldMoney = new System.Windows.Forms.TextBox();
+            this.txt_oldTotal = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txt_AfterDiscount = new System.Windows.Forms.TextBox();
+            this.txt_afterDiscount = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txt_Discount = new System.Windows.Forms.TextBox();
+            this.txt_discount = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_MaterialTotal = new System.Windows.Forms.TextBox();
+            this.txt_totalMaterial = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -64,15 +64,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_BillNumber = new System.Windows.Forms.TextBox();
+            this.txt_billNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_Quantity = new System.Windows.Forms.TextBox();
+            this.txt_quantity = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_Prise = new System.Windows.Forms.TextBox();
+            this.txt_Price = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.combo_Product = new System.Windows.Forms.ComboBox();
+            this.comboProduct = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -147,15 +147,15 @@
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.button2);
             this.panel7.Controls.Add(this.btuSave);
-            this.panel7.Controls.Add(this.txt_TotalMoney);
+            this.panel7.Controls.Add(this.txt_Total);
             this.panel7.Controls.Add(this.label14);
-            this.panel7.Controls.Add(this.txt_OldMoney);
+            this.panel7.Controls.Add(this.txt_oldTotal);
             this.panel7.Controls.Add(this.label15);
-            this.panel7.Controls.Add(this.txt_AfterDiscount);
+            this.panel7.Controls.Add(this.txt_afterDiscount);
             this.panel7.Controls.Add(this.label12);
-            this.panel7.Controls.Add(this.txt_Discount);
+            this.panel7.Controls.Add(this.txt_discount);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.txt_MaterialTotal);
+            this.panel7.Controls.Add(this.txt_totalMaterial);
             this.panel7.Controls.Add(this.label10);
             this.panel7.Location = new System.Drawing.Point(-1, -1);
             this.panel7.Name = "panel7";
@@ -212,17 +212,18 @@
             this.btuSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btuSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btuSave.UseVisualStyleBackColor = false;
+            this.btuSave.Click += new System.EventHandler(this.btuSave_Click);
             // 
-            // txt_TotalMoney
+            // txt_Total
             // 
-            this.txt_TotalMoney.Enabled = false;
-            this.txt_TotalMoney.Location = new System.Drawing.Point(761, 79);
-            this.txt_TotalMoney.Name = "txt_TotalMoney";
-            this.txt_TotalMoney.ReadOnly = true;
-            this.txt_TotalMoney.Size = new System.Drawing.Size(125, 20);
-            this.txt_TotalMoney.TabIndex = 26;
-            this.txt_TotalMoney.Text = "0";
-            this.txt_TotalMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Total.Enabled = false;
+            this.txt_Total.Location = new System.Drawing.Point(761, 79);
+            this.txt_Total.Name = "txt_Total";
+            this.txt_Total.ReadOnly = true;
+            this.txt_Total.Size = new System.Drawing.Size(125, 20);
+            this.txt_Total.TabIndex = 26;
+            this.txt_Total.Text = "0";
+            this.txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
@@ -234,16 +235,16 @@
             this.label14.Text = "اجمالى الحساب";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_OldMoney
+            // txt_oldTotal
             // 
-            this.txt_OldMoney.Enabled = false;
-            this.txt_OldMoney.Location = new System.Drawing.Point(1081, 79);
-            this.txt_OldMoney.Name = "txt_OldMoney";
-            this.txt_OldMoney.ReadOnly = true;
-            this.txt_OldMoney.Size = new System.Drawing.Size(125, 20);
-            this.txt_OldMoney.TabIndex = 24;
-            this.txt_OldMoney.Text = "0";
-            this.txt_OldMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_oldTotal.Enabled = false;
+            this.txt_oldTotal.Location = new System.Drawing.Point(1081, 79);
+            this.txt_oldTotal.Name = "txt_oldTotal";
+            this.txt_oldTotal.ReadOnly = true;
+            this.txt_oldTotal.Size = new System.Drawing.Size(125, 20);
+            this.txt_oldTotal.TabIndex = 24;
+            this.txt_oldTotal.Text = "0";
+            this.txt_oldTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
@@ -255,16 +256,16 @@
             this.label15.Text = "حساب قديم";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_AfterDiscount
+            // txt_afterDiscount
             // 
-            this.txt_AfterDiscount.Enabled = false;
-            this.txt_AfterDiscount.Location = new System.Drawing.Point(403, 20);
-            this.txt_AfterDiscount.Name = "txt_AfterDiscount";
-            this.txt_AfterDiscount.ReadOnly = true;
-            this.txt_AfterDiscount.Size = new System.Drawing.Size(125, 20);
-            this.txt_AfterDiscount.TabIndex = 22;
-            this.txt_AfterDiscount.Text = "0";
-            this.txt_AfterDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_afterDiscount.Enabled = false;
+            this.txt_afterDiscount.Location = new System.Drawing.Point(403, 20);
+            this.txt_afterDiscount.Name = "txt_afterDiscount";
+            this.txt_afterDiscount.ReadOnly = true;
+            this.txt_afterDiscount.Size = new System.Drawing.Size(125, 20);
+            this.txt_afterDiscount.TabIndex = 22;
+            this.txt_afterDiscount.Text = "0";
+            this.txt_afterDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
@@ -276,14 +277,16 @@
             this.label12.Text = "اجمالى بعد الخصم";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_Discount
+            // txt_discount
             // 
-            this.txt_Discount.Location = new System.Drawing.Point(761, 20);
-            this.txt_Discount.Name = "txt_Discount";
-            this.txt_Discount.Size = new System.Drawing.Size(125, 20);
-            this.txt_Discount.TabIndex = 20;
-            this.txt_Discount.Text = "0";
-            this.txt_Discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_discount.Location = new System.Drawing.Point(761, 20);
+            this.txt_discount.Name = "txt_discount";
+            this.txt_discount.Size = new System.Drawing.Size(125, 20);
+            this.txt_discount.TabIndex = 20;
+            this.txt_discount.Text = "0";
+            this.txt_discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_discount.TextChanged += new System.EventHandler(this.txt_discount_TextChanged);
+            this.txt_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_discount_KeyPress);
             // 
             // label11
             // 
@@ -295,16 +298,16 @@
             this.label11.Text = "اجمالى الخصم";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_MaterialTotal
+            // txt_totalMaterial
             // 
-            this.txt_MaterialTotal.Enabled = false;
-            this.txt_MaterialTotal.Location = new System.Drawing.Point(1081, 20);
-            this.txt_MaterialTotal.Name = "txt_MaterialTotal";
-            this.txt_MaterialTotal.ReadOnly = true;
-            this.txt_MaterialTotal.Size = new System.Drawing.Size(125, 20);
-            this.txt_MaterialTotal.TabIndex = 18;
-            this.txt_MaterialTotal.Text = "0";
-            this.txt_MaterialTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_totalMaterial.Enabled = false;
+            this.txt_totalMaterial.Location = new System.Drawing.Point(1081, 20);
+            this.txt_totalMaterial.Name = "txt_totalMaterial";
+            this.txt_totalMaterial.ReadOnly = true;
+            this.txt_totalMaterial.Size = new System.Drawing.Size(125, 20);
+            this.txt_totalMaterial.TabIndex = 18;
+            this.txt_totalMaterial.Text = "0";
+            this.txt_totalMaterial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -421,7 +424,7 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.textBox2);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.txt_BillNumber);
+            this.panel4.Controls.Add(this.txt_billNumber);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(736, 0);
             this.panel4.Name = "panel4";
@@ -456,6 +459,7 @@
             this.combo_name.Name = "combo_name";
             this.combo_name.Size = new System.Drawing.Size(174, 21);
             this.combo_name.TabIndex = 19;
+            this.combo_name.SelectedIndexChanged += new System.EventHandler(this.combo_name_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -486,15 +490,15 @@
             this.label1.Text = "تاريخ البيان";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_BillNumber
+            // txt_billNumber
             // 
-            this.txt_BillNumber.Enabled = false;
-            this.txt_BillNumber.Location = new System.Drawing.Point(322, 14);
-            this.txt_BillNumber.Name = "txt_BillNumber";
-            this.txt_BillNumber.ReadOnly = true;
-            this.txt_BillNumber.Size = new System.Drawing.Size(174, 20);
-            this.txt_BillNumber.TabIndex = 8;
-            this.txt_BillNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_billNumber.Enabled = false;
+            this.txt_billNumber.Location = new System.Drawing.Point(322, 14);
+            this.txt_billNumber.Name = "txt_billNumber";
+            this.txt_billNumber.ReadOnly = true;
+            this.txt_billNumber.Size = new System.Drawing.Size(174, 20);
+            this.txt_billNumber.TabIndex = 8;
+            this.txt_billNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -512,11 +516,11 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.richTextBox1);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.txt_Quantity);
+            this.panel3.Controls.Add(this.txt_quantity);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.txt_Prise);
+            this.panel3.Controls.Add(this.txt_Price);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.combo_Product);
+            this.panel3.Controls.Add(this.comboProduct);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -526,6 +530,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImage = global::ShopApplication.Properties.Resources.addition_sign__1_;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(314, 45);
@@ -533,13 +538,15 @@
             this.pictureBox1.Size = new System.Drawing.Size(25, 24);
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // txt_Quantity
+            // txt_quantity
             // 
-            this.txt_Quantity.Location = new System.Drawing.Point(345, 48);
-            this.txt_Quantity.Name = "txt_Quantity";
-            this.txt_Quantity.Size = new System.Drawing.Size(106, 20);
-            this.txt_Quantity.TabIndex = 16;
+            this.txt_quantity.Location = new System.Drawing.Point(345, 48);
+            this.txt_quantity.Name = "txt_quantity";
+            this.txt_quantity.Size = new System.Drawing.Size(106, 20);
+            this.txt_quantity.TabIndex = 16;
+            this.txt_quantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_quantity_KeyPress);
             // 
             // label5
             // 
@@ -551,13 +558,13 @@
             this.label5.Text = "الكمية";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_Prise
+            // txt_Price
             // 
-            this.txt_Prise.Location = new System.Drawing.Point(10, 14);
-            this.txt_Prise.Name = "txt_Prise";
-            this.txt_Prise.Size = new System.Drawing.Size(106, 20);
-            this.txt_Prise.TabIndex = 14;
-            this.txt_Prise.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Price.Location = new System.Drawing.Point(10, 14);
+            this.txt_Price.Name = "txt_Price";
+            this.txt_Price.Size = new System.Drawing.Size(106, 20);
+            this.txt_Price.TabIndex = 14;
+            this.txt_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -569,13 +576,14 @@
             this.label4.Text = "السعر";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // combo_Product
+            // comboProduct
             // 
-            this.combo_Product.FormattingEnabled = true;
-            this.combo_Product.Location = new System.Drawing.Point(248, 14);
-            this.combo_Product.Name = "combo_Product";
-            this.combo_Product.Size = new System.Drawing.Size(203, 21);
-            this.combo_Product.TabIndex = 12;
+            this.comboProduct.FormattingEnabled = true;
+            this.comboProduct.Location = new System.Drawing.Point(248, 14);
+            this.comboProduct.Name = "comboProduct";
+            this.comboProduct.Size = new System.Drawing.Size(203, 21);
+            this.comboProduct.TabIndex = 12;
+            this.comboProduct.SelectedIndexChanged += new System.EventHandler(this.comboProduct_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -626,15 +634,15 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btuSave;
-        private System.Windows.Forms.TextBox txt_TotalMoney;
+        private System.Windows.Forms.TextBox txt_Total;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txt_OldMoney;
+        private System.Windows.Forms.TextBox txt_oldTotal;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txt_AfterDiscount;
+        private System.Windows.Forms.TextBox txt_afterDiscount;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txt_Discount;
+        private System.Windows.Forms.TextBox txt_discount;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_MaterialTotal;
+        private System.Windows.Forms.TextBox txt_totalMaterial;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel5;
@@ -653,15 +661,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_BillNumber;
+        private System.Windows.Forms.TextBox txt_billNumber;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txt_Quantity;
+        private System.Windows.Forms.TextBox txt_quantity;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_Prise;
+        private System.Windows.Forms.TextBox txt_Price;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox combo_Product;
+        private System.Windows.Forms.ComboBox comboProduct;
         private System.Windows.Forms.Label label3;
     }
 }
