@@ -178,6 +178,18 @@ namespace ShopApplication
             Add_Tab("فاتورة مرتجع من العميل", new Customer_Returning_Form ());
         }
 
+        private void نسخةاحتياطيةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Shared_Backup_Form shared = new Shared_Backup_Form();
+            shared.ShowDialog();
+        }
+
+        private void استعادةنسخةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Shared_Restore_Form restore_Form = new Shared_Restore_Form();
+            restore_Form.ShowDialog();
+        }
+
         private void Add_Tab(string Name, Form form)
         {
             TabPage tp = new TabPage(Name);

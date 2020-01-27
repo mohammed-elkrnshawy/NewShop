@@ -39,6 +39,9 @@
             this.نسخالمحتوىToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.خردالمخازنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.السياراتوالعملاءToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافةسيارةعميلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,15 +57,12 @@
             this.حسابموردToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الاصنافوالمخازنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافةالاصنافToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.النسخالاحتياطىToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.نسخةاحتياطيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.استعادةنسخةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -160,6 +160,24 @@
             this.statusStrip1.Size = new System.Drawing.Size(1350, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(168, 17);
+            this.toolStripStatusLabel1.Text = "برمجة شركة ميكرو كود للبرمجيات ";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(73, 17);
+            this.toolStripStatusLabel2.Text = "01157055944";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(87, 17);
+            this.toolStripStatusLabel3.Text = "-   01068829106";
             // 
             // menuStrip1
             // 
@@ -295,6 +313,30 @@
             this.اضافةالاصنافToolStripMenuItem.Text = "اضافة و تعديل الاصناف";
             this.اضافةالاصنافToolStripMenuItem.Click += new System.EventHandler(this.اضافةالاصنافToolStripMenuItem_Click);
             // 
+            // النسخالاحتياطىToolStripMenuItem1
+            // 
+            this.النسخالاحتياطىToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.نسخةاحتياطيةToolStripMenuItem,
+            this.استعادةنسخةToolStripMenuItem});
+            this.النسخالاحتياطىToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.النسخالاحتياطىToolStripMenuItem1.Name = "النسخالاحتياطىToolStripMenuItem1";
+            this.النسخالاحتياطىToolStripMenuItem1.Size = new System.Drawing.Size(124, 25);
+            this.النسخالاحتياطىToolStripMenuItem1.Text = "النسخ الاحتياطى";
+            // 
+            // نسخةاحتياطيةToolStripMenuItem
+            // 
+            this.نسخةاحتياطيةToolStripMenuItem.Name = "نسخةاحتياطيةToolStripMenuItem";
+            this.نسخةاحتياطيةToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.نسخةاحتياطيةToolStripMenuItem.Text = "نسخة احتياطية";
+            this.نسخةاحتياطيةToolStripMenuItem.Click += new System.EventHandler(this.نسخةاحتياطيةToolStripMenuItem_Click);
+            // 
+            // استعادةنسخةToolStripMenuItem
+            // 
+            this.استعادةنسخةToolStripMenuItem.Name = "استعادةنسخةToolStripMenuItem";
+            this.استعادةنسخةToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.استعادةنسخةToolStripMenuItem.Text = "استعادة نسخة";
+            this.استعادةنسخةToolStripMenuItem.Click += new System.EventHandler(this.استعادةنسخةToolStripMenuItem_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -336,46 +378,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(550, 645);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(168, 17);
-            this.toolStripStatusLabel1.Text = "برمجة شركة ميكرو كود للبرمجيات ";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(73, 17);
-            this.toolStripStatusLabel2.Text = "01157055944";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(87, 17);
-            this.toolStripStatusLabel3.Text = "-   01068829106";
-            // 
-            // النسخالاحتياطىToolStripMenuItem1
-            // 
-            this.النسخالاحتياطىToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.نسخةاحتياطيةToolStripMenuItem,
-            this.استعادةنسخةToolStripMenuItem});
-            this.النسخالاحتياطىToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.النسخالاحتياطىToolStripMenuItem1.Name = "النسخالاحتياطىToolStripMenuItem1";
-            this.النسخالاحتياطىToolStripMenuItem1.Size = new System.Drawing.Size(124, 25);
-            this.النسخالاحتياطىToolStripMenuItem1.Text = "النسخ الاحتياطى";
-            // 
-            // نسخةاحتياطيةToolStripMenuItem
-            // 
-            this.نسخةاحتياطيةToolStripMenuItem.Name = "نسخةاحتياطيةToolStripMenuItem";
-            this.نسخةاحتياطيةToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.نسخةاحتياطيةToolStripMenuItem.Text = "نسخة احتياطية";
-            // 
-            // استعادةنسخةToolStripMenuItem
-            // 
-            this.استعادةنسخةToolStripMenuItem.Name = "استعادةنسخةToolStripMenuItem";
-            this.استعادةنسخةToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.استعادةنسخةToolStripMenuItem.Text = "استعادة نسخة";
             // 
             // SharedHomeForm
             // 

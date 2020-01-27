@@ -105,6 +105,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Enabled = false;
             this.radioButton2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.radioButton2.Location = new System.Drawing.Point(59, 27);
             this.radioButton2.Name = "radioButton2";
