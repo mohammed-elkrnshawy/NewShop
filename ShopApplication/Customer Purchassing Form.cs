@@ -283,7 +283,7 @@ namespace ShopApplication
                 EditStore();
                 EditSafe();
                 MessageBox.Show(SharedClass.Successful_Message);
-                DetailsPrint detailsPrint = new DetailsPrint(int.Parse(txt_BillNumber.Text), combo_car.Text,double.Parse(txt_Discount.Text),double.Parse(txt_Payment.Text));
+                DetailsPrint detailsPrint = new DetailsPrint(int.Parse(txt_BillNumber.Text), combo_car.Text,double.Parse(txt_Discount.Text),double.Parse(txt_Payment.Text),double.Parse(txt_OldMoney.Text));
                 detailsPrint.ShowDialog();
                 RefForm();
             }

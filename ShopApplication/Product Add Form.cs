@@ -29,7 +29,13 @@ namespace ShopApplication
         private void Product_Add_Form_Load(object sender, EventArgs e)
         {
             RefForm();
-           //dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           dataGridView1.Columns[0].AutoSizeMode
+                = dataGridView1.Columns[6].AutoSizeMode
+                = dataGridView1.Columns[3].AutoSizeMode
+                = dataGridView1.Columns[4].AutoSizeMode
+                = dataGridView1.Columns[5].AutoSizeMode
+                = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[1].AutoSizeMode = dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void RefForm()
@@ -48,7 +54,7 @@ namespace ShopApplication
                 dataGridView1.DataSource = ds.Tables["X"];
             }
 
-            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void ValidDataSave()

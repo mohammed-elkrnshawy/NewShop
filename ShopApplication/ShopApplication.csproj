@@ -410,5 +410,11 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\83119213_2489278864675817_5968110465157431296_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\83119213_2489278864675817_5968110465157431296_n1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

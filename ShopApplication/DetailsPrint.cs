@@ -17,16 +17,17 @@ namespace ShopApplication
     {
 
         int Bill_ID;
-        double Discount,Payment;
+        double Discount,Payment,old_total;
         string custome_name;
 
-        public DetailsPrint(int bill_ID, string customername, double Discount,double Payment)
+        public DetailsPrint(int bill_ID, string customername, double Discount,double Payment,double old_total)
         {
             InitializeComponent();
             this.Bill_ID = bill_ID;
             this.custome_name = customername;
             this.Discount = Discount;
             this.Payment = Payment;
+            this.old_total = old_total;
         }
 
         private void DetailsPrint_Load(object sender, EventArgs e)
@@ -63,6 +64,15 @@ namespace ShopApplication
             crParameterDiscreteValue.Value = custome_name;
             crParameterFieldDefinitions = cryRpt.DataDefinition.ParameterFields;
             crParameterFieldDefinition = crParameterFieldDefinitions["Name"];
+            crParameterValues = crParameterFieldDefinition.CurrentValues;
+            crParameterValues.Clear();
+            crParameterValues.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+            
+            
+            crParameterDiscreteValue.Value = old_total;
+            crParameterFieldDefinitions = cryRpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = crParameterFieldDefinitions["old_total"];
             crParameterValues = crParameterFieldDefinition.CurrentValues;
             crParameterValues.Clear();
             crParameterValues.Add(crParameterDiscreteValue);

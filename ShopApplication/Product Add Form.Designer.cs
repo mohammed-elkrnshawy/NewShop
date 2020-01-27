@@ -37,6 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -50,8 +52,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.bt_edit = new System.Windows.Forms.Button();
             this.bt_save = new System.Windows.Forms.Button();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -159,6 +159,25 @@
             this.panel3.Size = new System.Drawing.Size(650, 560);
             this.panel3.TabIndex = 0;
             // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(123, 356);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(196, 20);
+            this.txtCode.TabIndex = 20;
+            this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(371, 348);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(155, 30);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "كود المنتج";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
@@ -180,6 +199,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.Size = new System.Drawing.Size(647, 470);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -306,25 +326,6 @@
             this.bt_save.Text = "حفظ";
             this.bt_save.UseVisualStyleBackColor = false;
             this.bt_save.Click += new System.EventHandler(this.bt_save_Click);
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(123, 356);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(196, 20);
-            this.txtCode.TabIndex = 20;
-            this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(371, 348);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 30);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "كود المنتج";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Product_Add_Form
             // 
