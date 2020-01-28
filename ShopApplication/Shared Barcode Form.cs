@@ -1,11 +1,12 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using KeepAutomation.Barcode.Crystal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,28 +14,22 @@ using System.Windows.Forms;
 
 namespace ShopApplication
 {
-    public partial class DetailsPrint : Form
+    public partial class Shared_Barcode_Form : Form
     {
-
-        int Bill_ID;
-        double Discount,Payment,old_total;
-        string custome_name;
-
-        public DetailsPrint(int bill_ID, string customername, double Discount,double Payment,double old_total)
+        string barcode,name;
+        double price;
+        public Shared_Barcode_Form(string barcode,string name,double price)
         {
             InitializeComponent();
-            this.Bill_ID = bill_ID;
-            this.custome_name = customername;
-            this.Discount = Discount;
-            this.Payment = Payment;
-            this.old_total = old_total;
+            this.barcode = barcode;
+            this.name = name;
+            this.price = price;
         }
 
-        private void DetailsPrint_Load(object sender, EventArgs e)
+        private void Shared_Barcode_Form_Load(object sender, EventArgs e)
         {
-         
             ReportDocument cryRpt = new ReportDocument();
-            cryRpt.Load(Application.StartupPath + @"\CrystalBillDetails.rpt");
+            cryRpt.Load(Application.StartupPath + @"\CrystalReport1.rpt");
 
 
 
@@ -46,55 +41,32 @@ namespace ShopApplication
 
 
 
-            crParameterDiscreteValue.Value = Bill_ID;
+            crParameterDiscreteValue.Value = "*"+barcode+"*";
             crParameterFieldDefinitions = cryRpt.DataDefinition.ParameterFields;
-            crParameterFieldDefinition = crParameterFieldDefinitions["@BillID"];
+            crParameterFieldDefinition = crParameterFieldDefinitions["Barcode"];
             crParameterValues = crParameterFieldDefinition.CurrentValues;
             crParameterValues.Clear();
             crParameterValues.Add(crParameterDiscreteValue);
             crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
 
-
-
-            crParameterDiscreteValue.Value = custome_name;
+            crParameterDiscreteValue.Value = name;
             crParameterFieldDefinitions = cryRpt.DataDefinition.ParameterFields;
             crParameterFieldDefinition = crParameterFieldDefinitions["Name"];
             crParameterValues = crParameterFieldDefinition.CurrentValues;
             crParameterValues.Clear();
             crParameterValues.Add(crParameterDiscreteValue);
             crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
-            
-            
-            crParameterDiscreteValue.Value = old_total;
+
+
+            crParameterDiscreteValue.Value = price;
             crParameterFieldDefinitions = cryRpt.DataDefinition.ParameterFields;
-            crParameterFieldDefinition = crParameterFieldDefinitions["old_total"];
+            crParameterFieldDefinition = crParameterFieldDefinitions["Price"];
             crParameterValues = crParameterFieldDefinition.CurrentValues;
             crParameterValues.Clear();
             crParameterValues.Add(crParameterDiscreteValue);
             crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
-
-
-
-            crParameterDiscreteValue.Value = Discount;
-            crParameterFieldDefinitions = cryRpt.DataDefinition.ParameterFields;
-            crParameterFieldDefinition = crParameterFieldDefinitions["Discount"];
-            crParameterValues = crParameterFieldDefinition.CurrentValues;
-            crParameterValues.Clear();
-            crParameterValues.Add(crParameterDiscreteValue);
-            crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
-
-
-
-
-            crParameterDiscreteValue.Value = Payment;
-            crParameterFieldDefinitions = cryRpt.DataDefinition.ParameterFields;
-            crParameterFieldDefinition = crParameterFieldDefinitions["Payment"];
-            crParameterValues = crParameterFieldDefinition.CurrentValues;
-            crParameterValues.Clear();
-            crParameterValues.Add(crParameterDiscreteValue);
-            crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
 
 
