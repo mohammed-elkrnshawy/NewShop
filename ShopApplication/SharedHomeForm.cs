@@ -85,6 +85,17 @@ namespace ShopApplication
             Bitmap btm2 = new Bitmap(bt2, mysize);
             closeImage = btm2;
             tabControl1.Padding = new Point(30);
+
+            if (!isAdmin)
+            {
+                الموردينToolStripMenuItem.Enabled=
+                    الاصنافوالمخازنToolStripMenuItem.Enabled=
+                    المصروفاتToolStripMenuItem.Enabled=
+                    الخزنةToolStripMenuItem.Enabled=
+                    النسخالاحتياطىToolStripMenuItem.Enabled=
+                    النسخالاحتياطىToolStripMenuItem1.Enabled=
+                    false;
+            }
         }
 
         private void اضافةالاصنافToolStripMenuItem_Click(object sender, EventArgs e)

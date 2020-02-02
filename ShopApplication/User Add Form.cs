@@ -51,6 +51,9 @@ namespace ShopApplication
             {
                 dataGridView1.DataSource = ds.Tables["X"];
             }
+
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
         }
 
         private void SaveData()
